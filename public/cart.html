@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — ShopApp</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor:pointer">Shop<span class="dot">.</span></div>
+  <div class="nav-links">
+    <div class="nav-link" onclick="window.location.href='index.html'">← Continue Shopping</div>
+    <div id="navAuthArea"></div>
+  </div>
+</nav>
+
+<div class="cart-layout">
+  <div>
+    <h2 style="margin-bottom:20px;">Your Cart</h2>
+    <div id="cartItemsList"></div>
+    <div class="empty-state hidden" id="cartEmptyState" style="display:none;">
+      <div class="emoji">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Browse the catalog and add something you'll actually use.</p>
+      <button class="btn-secondary" onclick="window.location.href='index.html'" style="margin-top:8px;">Browse Products</button>
+    </div>
+  </div>
+
+  <div class="order-summary">
+    <h3 style="margin-bottom:18px; font-size:18px;">Order Summary</h3>
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span class="mono" id="summarySubtotal">$0.00</span>
+    </div>
+    <div class="summary-row">
+      <span>Shipping</span>
+      <span class="mono">Free</span>
+    </div>
+    <div class="summary-row total">
+      <span>Total</span>
+      <span class="mono" id="summaryTotal">$0.00</span>
+    </div>
+
+    <div class="field-group" style="margin-top:20px;">
+      <label>Shipping Address</label>
+      <input type="text" id="shippingAddress" placeholder="123 Main St, City, ZIP">
+    </div>
+
+    <button class="btn-primary btn-full" onclick="handleCheckout()" id="checkoutBtn" style="margin-top:8px;">
+      Place Order
+    </button>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="js/auth.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
