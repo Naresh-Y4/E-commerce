@@ -1,4 +1,3 @@
-// config/db.js - MySQL connection pool
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
